@@ -10,9 +10,9 @@ Problemas desarrolladas para la postulación de un puesto de backend developer e
 
 2. **Solve next problem**. Problema que busca ver la suma de todos los colores que se encuentran de un nodo a otro en
 un grafo. [archivo con la solución](question_two.py)
-> Tiempo estimado de desarrollo, optimización y prueba, .
+> Tiempo estimado de desarrollo, optimización y prueba, 3 horas.
 
-> Complejidad
+> Complejidad O(n)
 
 Preguntas a desarrollar
 
