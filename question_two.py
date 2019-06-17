@@ -3,34 +3,29 @@
 import os
 import sys
 
-""" A Python Class
-A simple Python graph class, demonstrating the essential 
-facts and functionalities of graphs.
+""" Clase de Python
+clase para la creación y funcionalidades basicas de un grafo.
+graph = { 1 : [2],
+          2 : [1,4],
+          3 : [1,2,4],
+          4 : []
+        }
 """
 class Graph(object):
 
     def __init__(self, graph_dict=None):
-        """ initializes a graph object
-            If no dictionary or None is given,
-            an empty dictionary will be used
-        """
+        'Función para la inicializar un grafo, si no se da un grafo, se inicializa en vacio'
         if graph_dict == None:
             graph_dict = {}
         self.__graph_dict = graph_dict
 
     def add_vertex(self, vertex):
-        """ If the vertex "vertex" is not in
-            self.__graph_dict, a key "vertex" with an empty
-            list as a value is added to the dictionary.
-            Otherwise nothing has to be done.
-        """
+        'Función para agregar un nodo al grafo'
         if vertex not in self.__graph_dict:
             self.__graph_dict[vertex] = []
 
     def add_edge(self, edge):
-        """ assumes that edge is of type set, tuple or list;
-            between two vertices can be multiple edges!
-        """
+        'Función para agregar un arco al grafo'
         edge = set(edge)
         (vertex1, vertex2) = tuple(edge)
         if vertex1 in self.__graph_dict:
@@ -40,18 +35,8 @@ class Graph(object):
             self.__graph_dict[vertex1] = [vertex2]
             self.__graph_dict[vertex2] = [vertex1]
 
-    def __str__(self):
-        res = "vertices: "
-        for k in self.__graph_dict:
-            res += str(k) + " "
-        res += "\nedges: "
-        for edge in self.__generate_edges():
-            res += str(edge) + " "
-        return res
-
     def find_path(self, start_vertex, end_vertex, path=None):
-            """ find a path from start_vertex to end_vertex
-                in graph """
+            'Función que encuentra un camino entre un nodo A y B'
             if path == None:
                 path = []
             graph = self.__graph_dict
@@ -69,6 +54,7 @@ class Graph(object):
 
 
 def find_cost(path, c):
+    'Función que encuentra el costo para un camino'
     cost = 0
     colors_traveled = list()
     for vertex in path:
@@ -79,8 +65,8 @@ def find_cost(path, c):
     return cost
 
 
-# Complete the solve function below.
 def solve(c, tree):
+    'Función que crea y recorre el grafo para saber el costo de los caminos'
     # Inicializamos la variable con la estructura de un grafo y matriz
     graph = Graph()
     matrix = list()
@@ -92,6 +78,7 @@ def solve(c, tree):
     for edge in tree:
         graph.add_edge(edge)
 
+    # Se crea una matriz de costo d(i,j), siendo i y j nodos del grafo, se recorre la matriz superior
     for x in range(0, len(c)):
         for y in range(x, len(c)):
             if x == y:

@@ -73,4 +73,5 @@ for i in range(0, N):
    a, b = [xx for xx in tmp]
    s.append(a)
    x.append(int(b))
+
 median(s, x)
