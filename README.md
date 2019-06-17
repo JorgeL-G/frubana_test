@@ -27,7 +27,7 @@ Un buen proyecto siempre tiene que, tener una metodología que se adapte al equi
 un codigo que tenga lo planteado en respuesta anterior, más todas las pruebas necesarias para su durabilidad y 
 escalabilidad.
 
-3. Qué patrones conoce? y utiliza?
+3. **Qué patrones conoce? y utiliza?**
 Si hablamos de patrones de arquitectura de software, programación por capas, arquitectura orientada a servicios y MVC
 (modelo-vista-controlador) son los patrones que conozco y he utilizado, patrones muy ligados al framework Django y
 proyectos en los que he participado, tengo noción de los patrones como arquitectura dirigida por eventos y pipeline,
